@@ -1,0 +1,25 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mpz45/employeeTracker.git"
+  },
+  "author": "Mihir Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mpz45/employeeTracker/issues"
+  },
+  "homepage": "https://github.com/Mpz45/employeeTracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
+  }
+}
