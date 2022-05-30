@@ -16,19 +16,20 @@ const db = mysql.createConnection({
 });
 
 const employeeUpdate = () => {
-    inquirer.prompt ([
+    inquirer.prompt([
         {
             type: 'list',
             name: 'employeeChoice',
             message: "Welcome. What would you like to do?",
-            Choices: ['View Employees',
-            'View Departments',
-            'View Roles',
-            'Add Employee',
-            'Add Department',
-            'Add Role',
-            'Update Roles',
-            'Quit'
+            choices: [
+                'View Employees',
+                'View Departments',
+                'View Roles',
+                'Add Employee',
+                'Add Department',
+                'Add Role',
+                'Update Roles',
+                'Quit'
             ]
         }
     ]).then((answer) => {
@@ -50,10 +51,13 @@ const employeeUpdate = () => {
                 break;
             case 'Add Role':
                 addRole();
+                break;
             case 'Update Roles':
                 updateRoles();
-            
-        }
+                break;
+            case 'Quit':
+                break;
+            }
     });
 };
 
@@ -81,7 +85,7 @@ const viewDepartments = () => {
             console.table(res)
             employeeUpdate()
     })
-};
+}
 
 const viewRoles = () => {
     rolesArr = []
@@ -185,7 +189,7 @@ const addRole = () => {
           employeeUpdate()
         })
     })
-};
+}
 
 employeeArr = [];
 const query = 'SELECT first_name FROM employee';
@@ -231,6 +235,6 @@ const updateRoles = () => {
             employeeUpdate()
         })
     })
-};
+}
 
-employeeUpdate();
+employeeUpdate()
